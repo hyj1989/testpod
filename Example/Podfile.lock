@@ -1,0 +1,18 @@
+PODS:
+  - podtest (0.1.0):
+    - podtest/TencentSDK (= 0.1.0)
+  - podtest/TencentSDK (0.1.0)
+
+DEPENDENCIES:
+  - podtest (from `../`)
+
+EXTERNAL SOURCES:
+  podtest:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  podtest: 512babfd31a35bd09a08d5534546a8bff775b896
+
+PODFILE CHECKSUM: e7039d778c19c2326ce316a1e0e174fe03e28ceb
+
+COCOAPODS: 1.7.5

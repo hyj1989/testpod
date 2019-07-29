@@ -8,11 +8,24 @@
 
 #import "hyjAppDelegate.h"
 
+#import <hyjPerson.h>
+
+#import <TencentOpenAPI/QQApiInterface.h>
+
+#import "podtest_Example-Swift.h"
+
 @implementation hyjAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [hyjPerson run];
+    
+    [QQApiInterface isQQInstalled];
+    
+    [[test111 new] test2222];
+    
     return YES;
 }
 
