@@ -33,30 +33,58 @@ TODO: Add long description of the pod here.
   s.source_files = 'podtest/Classes/**/*'
   
   # 使用静态库模式 (否则 TencenOpenAPI 的文件链接不到)
-  s.static_framework = true
+  # s.static_framework = true
   
-  s.swift_version = '4.0'
+#  s.swift_version = '4.0'
   # 在spec中设置
   
   # 依赖了 lib 库，这里需要设置 other_ldflags 为 -ObjC，否则加载 crash
 #  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
 
-  # TencentSDK
-  s.subspec 'TencentSDK' do |ss|
-      ss.vendored_frameworks = 'podtest/Classes/Third/TencentOpenAPI.framework'
-      ss.ios.source_files = 'podtest/Classes/Third/TencentOpenAPI.framework/Headers/*.h'
-      ss.ios.public_header_files = 'podtest/Classes/Third/TencentOpenAPI.framework/Headers/*.h'
+    s.vendored_frameworks = 'podtest/Classes/Third/*.framework'
+    s.vendored_libraries = 'podtest/Classes/Third/*.a'
+    
+    s.resources = 'podtest/Assets/WeiboSDK.bundle'
+    
+    
+       s.frameworks = 'SystemConfiguration'
       
-      # 依赖库
-      ss.frameworks = 'SystemConfiguration'
-  end
+      
+      s.preserve_paths = 'podtest/Classes/Third/*.framework'
 
-  
+      
+      s.prepare_command = <<-EOF
+      
+      # 业务Module
+      rm -rf podtest/Classes/Third/TencentOpenAPI.framework/Modules
+      mkdir podtest/Classes/Third/TencentOpenAPI.framework/Modules
+      touch podtest/Classes/Third/TencentOpenAPI.framework/Modules/module.modulemap
+      cat <<-EOF > podtest/Classes/Third/TencentOpenAPI.framework/Modules/module.modulemap
+      framework module TencentOpenAPI {
+          umbrella header "TencentCompent.h"
+          export *
+      }
+      \EOF
+      
+      # 创建Base Module
+      rm -rf podtest/Classes/Third/BaiduMapAPI_Base.framework/Modules
+      mkdir podtest/Classes/Third/BaiduMapAPI_Base.framework/Modules
+      touch podtest/Classes/Third/BaiduMapAPI_Base.framework/Modules/module.modulemap
+      cat <<-EOF > podtest/Classes/Third/BaiduMapAPI_Base.framework/Modules/module.modulemap
+      framework module BaiduMapAPI_Base {
+          umbrella header "BMKBaseComponent.h"
+          export *
+          link "sqlite3.0"
+      }
+      \EOF
+      
+      EOF
+      
   # s.resource_bundles = {
   #   'podtest' => ['podtest/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_heaTencentOAuthder_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

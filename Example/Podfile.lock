@@ -1,7 +1,5 @@
 PODS:
-  - podtest (0.1.0):
-    - podtest/TencentSDK (= 0.1.0)
-  - podtest/TencentSDK (0.1.0)
+  - podtest (0.1.0)
 
 DEPENDENCIES:
   - podtest (from `../`)
@@ -11,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  podtest: da79f5ee182823212467a6850ebe02300cce5829
+  podtest: f218da41dcef258770277e7413bf3712c67e6939
 
 PODFILE CHECKSUM: e7039d778c19c2326ce316a1e0e174fe03e28ceb
 

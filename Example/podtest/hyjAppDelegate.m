@@ -10,7 +10,7 @@
 
 #import <hyjPerson.h>
 
-#import <TencentOpenAPI/QQApiInterface.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
 
 #import "podtest_Example-Swift.h"
 
@@ -22,7 +22,7 @@
     
     [hyjPerson run];
     
-    [QQApiInterface isQQInstalled];
+//    [QQApiInterface isQQInstalled];
     
     [[test111 new] test2222];
     
