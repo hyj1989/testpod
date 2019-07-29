@@ -41,17 +41,13 @@ TODO: Add long description of the pod here.
   # 依赖了 lib 库，这里需要设置 other_ldflags 为 -ObjC，否则加载 crash
 #  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
 
-    s.vendored_frameworks = 'podtest/Classes/Third/*.framework'
-    s.vendored_libraries = 'podtest/Classes/Third/*.a'
-    
-    s.resources = 'podtest/Assets/WeiboSDK.bundle'
-    
-    
+
+s.vendored_frameworks = 'podtest/Classes/Third/*.framework'
+
+
        s.frameworks = 'SystemConfiguration'
       
       
-      s.preserve_paths = 'podtest/Classes/Third/*.framework'
-
       
       s.prepare_command = <<-EOF
       
