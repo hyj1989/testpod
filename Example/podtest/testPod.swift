@@ -8,10 +8,15 @@
 
 import Foundation
 
+
+//import TencentOpenAPI
+
+//import q
+
 @objc class test111: NSObject {
     
     @objc func test2222() {
-        QQApiInterface.isQQInstalled()
+//        QQApiInterface.isQQInstalled()
         print("我是swift打印123")
     }
 }

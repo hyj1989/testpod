@@ -35,9 +35,8 @@ TODO: Add long description of the pod here.
   # 使用静态库模式 (否则 TencenOpenAPI 的文件链接不到)
   s.static_framework = true
   
-  s.swift_version = ‘4.0'
-  #在spec中设置
-
+  s.swift_version = '4.0'
+  # 在spec中设置
   
   # 依赖了 lib 库，这里需要设置 other_ldflags 为 -ObjC，否则加载 crash
 #  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
@@ -45,8 +44,8 @@ TODO: Add long description of the pod here.
   # TencentSDK
   s.subspec 'TencentSDK' do |ss|
       ss.vendored_frameworks = 'podtest/Classes/Third/TencentOpenAPI.framework'
-      #     ss.ios.source_files        = 'YWLogin/Classes/LoginSDK/TencentSDK/TencentOpenAPI.framework/Headers/*.h'
-      #     ss.ios.public_header_files = 'YWLogin/Classes/LoginSDK/TencentSDK/TencentOpenAPI.framework/Headers/*.h'
+      ss.ios.source_files = 'podtest/Classes/Third/TencentOpenAPI.framework/Headers/*.h'
+      ss.ios.public_header_files = 'podtest/Classes/Third/TencentOpenAPI.framework/Headers/*.h'
       
       # 依赖库
       ss.frameworks = 'SystemConfiguration'
