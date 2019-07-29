@@ -35,7 +35,8 @@ TODO: Add long description of the pod here.
   # 使用静态库模式 (否则 TencenOpenAPI 的文件链接不到)
   s.static_framework = true
   
-  s.swift_version = ‘4.0' //在spec中设置
+  s.swift_version = ‘4.0'
+  #在spec中设置
 
   
   # 依赖了 lib 库，这里需要设置 other_ldflags 为 -ObjC，否则加载 crash
